@@ -10,10 +10,6 @@ public class Entity : MonoBehaviour
     public EntityFX fx { get; private set; }
     
     #endregion
-
-    [Header("Stunned info")] 
-    public float stunDuration;
-    public Vector2 stunDirection;
     
     [Header("Knockback info")] 
     [SerializeField] protected Vector2 knockbackDirection;
