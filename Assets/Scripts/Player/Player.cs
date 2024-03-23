@@ -8,6 +8,7 @@ public class Player : Entity
 {
     [Header("Attack details")]
     public Vector2[] attackMovement;
+    public float counterAttackDuration = 0.2f;
     
     public bool isBusy { get; private set; }
     [Header("Move info")] 
@@ -16,11 +17,13 @@ public class Player : Entity
 
     [Header("Dash info")] 
     [SerializeField] private float dashCooldown = 1f;
-    public float dashUsageTimer;
+    private float dashUsageTimer;
     public float dashSpeed = 25f;
     public float dashDuration = 0.2f;
     public float dashDir { get; private set; }
 
+    
+    
     #region States
     public PlayerStateMachine stateMachine { get; private set; }
     public PlayerIdleState idleState { get; private set; }
@@ -30,7 +33,9 @@ public class Player : Entity
     public PlayerDashState dashState { get; private set; }
     public PlayerWallSlideState wallSlide { get; private set; }
     public PlayerWallJumpState wallJump { get; private set; }
-    public PlayerPrimaryAttackState PrimaryAttackState { get; private set; }
+    
+    public PlayerPrimaryAttackState primaryAttack { get; private set; }
+    public PlayerCounterAttackState counterAttack { get; private set; }
     #endregion
 
     protected override void Awake()
@@ -45,8 +50,9 @@ public class Player : Entity
         dashState = new PlayerDashState(this, stateMachine, "Dash");
         wallSlide = new PlayerWallSlideState(this, stateMachine, "WallSlide");
         wallJump = new PlayerWallJumpState(this, stateMachine, "Jump");
-        
-        PrimaryAttackState = new PlayerPrimaryAttackState(this, stateMachine, "Attack");
+            
+        primaryAttack = new PlayerPrimaryAttackState(this, stateMachine, "Attack");
+        counterAttack = new PlayerCounterAttackState(this, stateMachine, "CounterAttack");
     }
     
     protected override void Start()
