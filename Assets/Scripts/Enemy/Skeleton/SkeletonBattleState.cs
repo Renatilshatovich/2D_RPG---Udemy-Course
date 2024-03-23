@@ -18,6 +18,8 @@ public class SkeletonBattleState : EnemyState
         base.Enter();
 
         player = GameObject.Find("Player").transform;
+        
+        
     }
 
     public override void Update()
