@@ -4343,6 +4343,7 @@ GameObject:
   - component: {fileID: 1002156017}
   - component: {fileID: 1002156016}
   - component: {fileID: 1002156015}
+  - component: {fileID: 1002156018}
   m_Layer: 0
   m_Name: SkillManager
   m_TagString: Untagged
@@ -4390,6 +4391,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1002156018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002156014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b9483905f52798f5b263cd5ef751334, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  clonePrefab: {fileID: 4951695247684532182, guid: e64416726be915c348278a830f9bf891, type: 3}
+  cloneDuration: 1.5
 --- !u!1 &1062289774
 GameObject:
   m_ObjectHideFlags: 0
