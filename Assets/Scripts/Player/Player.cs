@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using UnityEngine.Serialization;
 
 public class Player : Entity
@@ -35,6 +36,8 @@ public class Player : Entity
     
     public PlayerPrimaryAttackState primaryAttack { get; private set; }
     public PlayerCounterAttackState counterAttack { get; private set; }
+    public PlayerAnimSwordState animSword { get; private set; }
+    public PlayerCatchSwordState catchSword { get; private set; }
     #endregion
 
     protected override void Awake()
@@ -52,6 +55,9 @@ public class Player : Entity
             
         primaryAttack = new PlayerPrimaryAttackState(this, stateMachine, "Attack");
         counterAttack = new PlayerCounterAttackState(this, stateMachine, "CounterAttack");
+
+        animSword = new PlayerAnimSwordState(this, stateMachine, "AimSword");
+        catchSword = new PlayerCatchSwordState(this, stateMachine, "CatchSword"); 
     }
     
     protected override void Start()
