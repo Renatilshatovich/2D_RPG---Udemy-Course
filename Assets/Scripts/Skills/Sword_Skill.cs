@@ -38,7 +38,7 @@ public class Sword_Skill : Skill
         {
             for (int i = 0; i < dots.Length; i++)
             {
-                dots[i].transform.position = DotsPosition(i * spaceBeetwenDots);    
+                dots[i].transform.position = DotsPosition(i * spaceBeetwenDots);
             }
         }
     }
@@ -47,7 +47,8 @@ public class Sword_Skill : Skill
         GameObject newSword = Instantiate(swordPrefab, player.transform.position, transform.rotation);
         Sword_Skill_Controller newSwordScript = newSword.GetComponent<Sword_Skill_Controller>();
         
-        newSwordScript.SetupSword(launchForce, swordGravity);
+        newSwordScript.SetupSword(finalDir, swordGravity, player);
+        player.AssignNewSword(newSword);
         DotsActive(false);
     }
 

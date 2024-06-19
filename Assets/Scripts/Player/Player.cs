@@ -23,6 +23,7 @@ public class Player : Entity
 
     
     public SkillManager skill { get; private set; }
+    public GameObject sword { get; private set; }
     
     #region States
     public PlayerStateMachine stateMachine { get; private set; }
@@ -36,7 +37,7 @@ public class Player : Entity
     
     public PlayerPrimaryAttackState primaryAttack { get; private set; }
     public PlayerCounterAttackState counterAttack { get; private set; }
-    public PlayerAnimSwordState animSword { get; private set; }
+    public PlayerAimSwordState aimSword { get; private set; }
     public PlayerCatchSwordState catchSword { get; private set; }
     #endregion
 
@@ -56,7 +57,7 @@ public class Player : Entity
         primaryAttack = new PlayerPrimaryAttackState(this, stateMachine, "Attack");
         counterAttack = new PlayerCounterAttackState(this, stateMachine, "CounterAttack");
 
-        animSword = new PlayerAnimSwordState(this, stateMachine, "AimSword");
+        aimSword = new PlayerAimSwordState(this, stateMachine, "AimSword");
         catchSword = new PlayerCatchSwordState(this, stateMachine, "CatchSword"); 
     }
     
@@ -75,6 +76,16 @@ public class Player : Entity
         stateMachine.currentState.Update();
         
         CheckForDashInput();
+    }
+
+    public void AssignNewSword(GameObject _newSword)
+    {
+        sword = _newSword;
+    }
+
+    public void ClearTheSword()
+    {
+        Destroy(sword);
     }
 
     public IEnumerator BusyFor (float _seconds)
