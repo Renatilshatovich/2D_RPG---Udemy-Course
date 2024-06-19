@@ -11,6 +11,8 @@ public class PlayerAnimSwordState : PlayerState
     public override void Enter()
     {
         base.Enter();
+        
+        player.skill.sword.DotsActive(true);
     }
 
     public override void Update()
