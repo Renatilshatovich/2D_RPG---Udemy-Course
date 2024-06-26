@@ -4602,11 +4602,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 0
+  swordType: 0
+  amountOfBounce: 5
+  bounceGravity: 5
   swordPrefab: {fileID: 3783078191508917880, guid: 345a715bee3b37fe984266de084026c5, type: 3}
   launchForce: {x: 35, y: 25}
   swordGravity: 4.5
   numberOfDots: 20
-  spaceBeetwenDots: 0.08
+  spaceBeetwenDots: 0.07
   dotPrefab: {fileID: 7380192055524344823, guid: c4e4141d31315b14b8242264b04decf7, type: 3}
   dotsParent: {fileID: 1127709428}
 --- !u!1 &1062289774
