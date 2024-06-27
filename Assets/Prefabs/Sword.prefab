@@ -96,7 +96,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.35
 --- !u!114 &8972420225466125114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,9 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   returnSpeed: 12
-  isBouncing: 1
-  bounceAmount: 4
-  enemyTarget: []
+  bounceSpeed: 20
 --- !u!1 &6437296939771312540
 GameObject:
   m_ObjectHideFlags: 0

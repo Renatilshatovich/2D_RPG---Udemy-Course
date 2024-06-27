@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.ExceptionServices;
 using TMPro.EditorUtilities;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Sword_Skill_Controller : MonoBehaviour
@@ -63,6 +64,11 @@ public class Sword_Skill_Controller : MonoBehaviour
         enemyTarget = new List<Transform>();
     }
 
+    public void SetupPierce(int _pierceAmount)
+    {
+        pierceAmount = _pierceAmount;
+    }
+
     public void ReturnSword()
     {
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
@@ -116,6 +122,8 @@ public class Sword_Skill_Controller : MonoBehaviour
     {
         if (isReturning)
             return;
+        
+        collision.GetComponent<Enemy>()?.Damage();
 
         if (collision.GetComponent<Enemy>() != null)
         {
@@ -136,6 +144,12 @@ public class Sword_Skill_Controller : MonoBehaviour
 
     private void StuckInfo(Collider2D collision)
     {
+        if (pierceAmount > 0 && collision.GetComponent<Enemy>() != null)
+        {
+            pierceAmount--;
+            return;
+        }
+        
         canRotate = false;
         cd.enabled = false;
 

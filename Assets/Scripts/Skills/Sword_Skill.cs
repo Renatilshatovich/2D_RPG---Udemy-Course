@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public enum SwordType
 {
@@ -15,8 +16,13 @@ public class Sword_Skill : Skill
     public SwordType swordType = SwordType.Regular;
     
     [Header("Bounce info")]
-    [SerializeField] private int amountOfBounce;
+    [SerializeField] private int bounceAmount;
     [SerializeField] private float bounceGravity;
+    
+    [FormerlySerializedAs("peirceAmount")]
+    [Header("Peirce info")]
+    [SerializeField] private int pierceAmount;
+    [SerializeField] private float peirceGravity;
     
     [Header("Skill info")]
     [SerializeField] private GameObject swordPrefab;
@@ -38,6 +44,16 @@ public class Sword_Skill : Skill
         base.Start();
         
         GenerateDots();
+
+        SetupGravity();
+    }
+
+    private void SetupGravity()
+    {
+        if (swordType == SwordType.Bounce)
+            swordGravity = bounceGravity;
+        else if (swordType == SwordType.Pierce)
+            swordGravity = peirceGravity;
     }
 
     protected override void Update()
@@ -62,12 +78,10 @@ public class Sword_Skill : Skill
         Sword_Skill_Controller newSwordScript = newSword.GetComponent<Sword_Skill_Controller>();
 
         if (swordType == SwordType.Bounce)
-        {
-            swordGravity = bounceGravity;
+            newSwordScript.SetupBounce(true, bounceAmount);
+        else if (swordType == SwordType.Pierce)
+            newSwordScript.SetupPierce(pierceAmount);
             
-            newSwordScript.SetupBounce(true, amountOfBounce);
-        }
-        
         newSwordScript.SetupSword(finalDir, swordGravity, player);
         player.AssignNewSword(newSword);
         DotsActive(false);
