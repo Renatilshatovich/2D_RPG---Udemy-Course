@@ -10,6 +10,7 @@ public class PlayerCounterAttackState : PlayerState
         base.Enter();
         
         stateTimer = player.counterAttackDuration;
+        player.anim.SetBool("SuccessfulCounterAttack", false);
     }
 
     public override void Update()
@@ -34,11 +35,5 @@ public class PlayerCounterAttackState : PlayerState
 
         if (stateTimer < 0 || triggerCalled)
             stateMachine.ChangeState(player.idleState);
-    }
-
-    public override void Exit()
-    {
-        base.Exit();
-        player.anim.SetBool("SuccessfulCounterAttack", false);
     }
 }

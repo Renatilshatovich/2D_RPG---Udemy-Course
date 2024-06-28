@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -6,11 +5,11 @@ public class EntityFX : MonoBehaviour
 {
     private SpriteRenderer sr;
 
-    [Header("Flash FX")] 
+    [Header("Flash FX")]
     [SerializeField] private float flashDuration;
     [SerializeField] private Material hitMat;
     private Material originalMat;
-
+    
     private void Start()
     {
         sr = GetComponentInChildren<SpriteRenderer>();
