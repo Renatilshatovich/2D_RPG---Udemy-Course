@@ -37,9 +37,9 @@ public class Entity : MonoBehaviour
     protected virtual void Start()
     {
         sr = GetComponentInChildren<SpriteRenderer>();
+        fx = GetComponent<EntityFX>();
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        fx = GetComponent<EntityFX>();
     }
 
     protected virtual void Update()
