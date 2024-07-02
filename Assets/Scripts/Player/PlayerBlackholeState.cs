@@ -41,6 +41,9 @@ public class PlayerBlackholeState : PlayerState
                     skiilUsed = true;
             }
         }
+
+        if (player.skill.blackhole.SkillCompleted())
+            stateMachine.ChangeState(player.airState);
     }
 
     public override void Exit()

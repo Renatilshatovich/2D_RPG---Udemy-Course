@@ -4263,7 +4263,7 @@ Transform:
   m_GameObject: {fileID: 566206691}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.8600001, y: 0.73, z: 0}
+  m_LocalPosition: {x: -2.57, y: 0.73, z: 0}
   m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4629,7 +4629,7 @@ Transform:
   m_GameObject: {fileID: 633544119}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.79, y: 0.73, z: 0}
+  m_LocalPosition: {x: 4.6, y: 0.73, z: 0}
   m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5198,8 +5198,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 0
-  amountOfAttacks: 5
+  amountOfAttacks: 3
   cloneCooldown: 0.35
+  blackholeDuration: 3
   blackHolePrefab: {fileID: 3928771743928584110, guid: c4a1b796a6bee34739c44f16c88084b0, type: 3}
   maxSize: 15
   growSpeed: 3
