@@ -28,6 +28,15 @@ public class Crystal_Skill_Controller : MonoBehaviour
         moveSpeed = _moveSpeed;
         closestTarget = _closestTarget;
     }
+    // public void ChooseRandomEnemy()
+    // {
+    //     float radius = SkillManager.instance.blackhole.GetBlackholeRadius();
+    //
+    //     Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, radius,whatIsEnemy);
+    //
+    //     if(colliders.Length > 0)
+    //         closestTarget = colliders[Random.Range(0, colliders.Length)].transform;
+    // }
 
     private void Update()
     {
@@ -41,8 +50,7 @@ public class Crystal_Skill_Controller : MonoBehaviour
 
         if (canMove)
         {
-            transform.position =
-                Vector2.MoveTowards(transform.position, closestTarget.position, moveSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, closestTarget.position, moveSpeed * Time.deltaTime);
 
             if (Vector2.Distance(transform.position, closestTarget.position) < 1)
             {
