@@ -37,6 +37,9 @@ public void SetupBlackHole(float _maxSize, float _growSpeed, float _shrinkSpeed,
         cloneAttackCooldown = _cloneAttackCooldown;
 
         blackholeTimer = _blaclholeDuration;
+
+        if (SkillManager.instance.clone.crystalInseadOfClone)
+            playerCanDisapear = false;
     }
 
     private void Update()
@@ -107,8 +110,17 @@ public void SetupBlackHole(float _maxSize, float _growSpeed, float _shrinkSpeed,
                 xOffset = 1;
             else
                 xOffset = -1;
+
+            if (SkillManager.instance.clone.crystalInseadOfClone)
+            {
+                SkillManager.instance.crystal.CreateCrystal();
+                SkillManager.instance.crystal.CurrentCrystalChooseRandomTarget();
+            }
+            else
+            {
+                SkillManager.instance.clone.CreateClone(targets[randomIndex], new Vector3(xOffset, 0));
+            }
             
-            SkillManager.instance.clone.CreateClone(targets[randomIndex], new Vector3(xOffset, 0));
             amountOfAttacks--;
 
             if (amountOfAttacks <= 0)
