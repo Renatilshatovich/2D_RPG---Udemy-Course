@@ -4100,7 +4100,7 @@ GameObject:
   - component: {fileID: 566206693}
   - component: {fileID: 566206696}
   - component: {fileID: 566206695}
-  - component: {fileID: 566206694}
+  - component: {fileID: 566206698}
   - component: {fileID: 566206697}
   m_Layer: 7
   m_Name: Enemy_Skeleton
@@ -4141,7 +4141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76ef5770841a19c699d10ea6a62d71ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackDirection: {x: 7, y: 12}
+  knockbackDirection: {x: 5, y: 5}
   knockbackDuration: 0.07
   attackCheck: {fileID: 1560908102}
   attackCheckRadius: 0.8
@@ -4164,51 +4164,6 @@ MonoBehaviour:
   attackDistance: 1.5
   attackCooldown: 0.4
   lastTimeAttacked: 0
---- !u!61 &566206694
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 566206691}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.25, y: -0.25}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.86, y: 1.5}
-  m_EdgeRadius: 0
 --- !u!50 &566206695
 Rigidbody2D:
   serializedVersion: 4
@@ -4259,16 +4214,54 @@ MonoBehaviour:
   m_GameObject: {fileID: 566206691}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39debcd41e7f998fda3091e22c40d151, type: 3}
+  m_Script: {fileID: 11500000, guid: 571128c0e73e3473c8b5e924cf4dfb61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  strength:
+    baseValue: 0
+    modifiers: 
   damage:
-    baseValue: 7
+    baseValue: 10
     modifiers: 
   maxHealth:
-    baseValue: 100
+    baseValue: 20
     modifiers: 
   currentHealth: 0
+--- !u!70 &566206698
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566206691}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.24779503, y: -0.25530446}
+  m_Size: {x: 0.77032167, y: 1.5406433}
+  m_Direction: 0
 --- !u!1 &581825476
 GameObject:
   m_ObjectHideFlags: 0
@@ -4565,7 +4558,7 @@ MonoBehaviour:
   canCreateCloneOnCounterAttack: 1
   canDuplicateClone: 1
   chanceToDuplicate: 0
-  crystalInseadOfClone: 1
+  crystalInseadOfClone: 0
 --- !u!114 &1002156019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13741,7 +13734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 179d30cd8b92163e0a59fbd5ff3c4309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackDirection: {x: 7, y: 12}
+  knockbackDirection: {x: 5, y: 5}
   knockbackDuration: 0.07
   attackCheck: {fileID: 1754002865}
   attackCheckRadius: 0.8
@@ -13847,14 +13840,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1232500336}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39debcd41e7f998fda3091e22c40d151, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e8200690b9c6479981b7aafbfbffad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  strength:
+    baseValue: 0
+    modifiers: 
   damage:
-    baseValue: 7
+    baseValue: 10
     modifiers: 
   maxHealth:
-    baseValue: 0
+    baseValue: 1000
     modifiers: 
   currentHealth: 0
 --- !u!1 &1269729338

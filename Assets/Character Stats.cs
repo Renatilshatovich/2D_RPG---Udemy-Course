@@ -28,13 +28,13 @@ public class CharacterStats : MonoBehaviour
      public virtual void TakeDamage(int _damage)
      {
           currentHealth -= _damage;
-
-          if (currentHealth < 0)
+          
+          if (currentHealth < 0 )
                Die();
      }
 
      protected virtual void Die()
      {
-          throw new NotImplementedException();
+          // throw new NotImplementedException();
      }
 }
