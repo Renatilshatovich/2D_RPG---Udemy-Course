@@ -17,6 +17,16 @@ public class CharacterStats : MonoBehaviour
      public Stat maxHealth;
      public Stat armor;
      public Stat evasion;
+     public Stat magicResistance;
+
+     [Header("Magic stats")] 
+     public Stat fireDamage;
+     public Stat iceDamage;
+     public Stat lightingDamage;
+
+     public bool isIgnited;
+     public bool isChilled;
+     public bool isShocked;
      
      [SerializeField] private int currentHealth;
 
@@ -39,13 +49,43 @@ public class CharacterStats : MonoBehaviour
           }
           
           totalDamage = CheckTargetArmor(_targetStats, totalDamage);
-          _targetStats.TakeDamage(totalDamage);
+          // _targetStats.TakeDamage(totalDamage);
+          DoMagicalDamage(_targetStats);
+     }
+
+     public virtual void DoMagicalDamage(CharacterStats _targetStats)
+     {
+          int _fireDamage = fireDamage.GetValue();
+          int _iceDamage = iceDamage.GetValue();
+          int _lightDamage = lightingDamage.GetValue();
+
+          int totalMagicalDamage = _fireDamage + _iceDamage + _lightDamage + intelligence.GetValue();
+          totalMagicalDamage = CheckTargetResistance(_targetStats, totalMagicalDamage);
+
+          _targetStats.TakeDamage(totalMagicalDamage);
+     }
+
+     private int CheckTargetResistance(CharacterStats _targetStats, int totalMagicalDamage)
+     {
+          totalMagicalDamage -= _targetStats.magicResistance.GetValue() + (_targetStats.intelligence.GetValue() * 3);
+          totalMagicalDamage = Mathf.Clamp(totalMagicalDamage, 0, int.MaxValue);
+          return totalMagicalDamage;
+     }
+
+     public void ApplyAilments(bool _ignite, bool _chill, bool _shock)
+     {
+          if (isIgnited || isChilled || isShocked)
+               return;
+
+          isIgnited = _ignite;
+          isChilled = _chill;
+          isShocked = _shock;
      }
      
      public virtual void TakeDamage(int _damage)
      {
           currentHealth -= _damage;
-          
+          Debug.Log(_damage);
           if (currentHealth < 0 )
                Die();
      }
