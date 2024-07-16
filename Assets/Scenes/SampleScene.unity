@@ -4236,10 +4236,10 @@ MonoBehaviour:
     baseValue: 99
     modifiers: 
   critPower:
-    baseValue: 0
+    baseValue: 150
     modifiers: 
   maxHealth:
-    baseValue: 20
+    baseValue: 25
     modifiers: 
   armor:
     baseValue: 0
@@ -13913,7 +13913,7 @@ MonoBehaviour:
     baseValue: 1
     modifiers: 
   fireDamage:
-    baseValue: 4
+    baseValue: 12
     modifiers: 
   iceDamage:
     baseValue: 4
