@@ -92,7 +92,7 @@ public void SetupBlackHole(float _maxSize, float _growSpeed, float _shrinkSpeed,
         if (playerCanDisapear)
         {
             playerCanDisapear = false;
-            PlayerManager.instance.player.MakeTransprent(true);
+            PlayerManager.instance.player.fx.MakeTransperent(true);
         }
     }
 

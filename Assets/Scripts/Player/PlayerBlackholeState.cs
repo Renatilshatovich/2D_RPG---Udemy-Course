@@ -51,7 +51,7 @@ public class PlayerBlackholeState : PlayerState
         base.Exit();
 
         player.rb.gravityScale = defultGravity;
-        player.MakeTransprent(false);
+        player.fx.MakeTransperent(false);
     }
 
     public override void AnimationFinishTrigger()

@@ -19,7 +19,7 @@ public class PlayerStats : CharacterStats
         base.TakeDamage(_damage);
         
         if (isKnocked)
-            player.DamageEffect();
+            player.DamageImpact();
     }
 
     protected override void Die()
