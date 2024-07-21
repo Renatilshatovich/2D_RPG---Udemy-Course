@@ -20,7 +20,7 @@ public class ItemObject : MonoBehaviour
     {
         if (collision.GetComponent<Player>() != null)
         {
-            Debug.Log("Picked up data " + itemData.itemName);
+            Inventory.instance.AddItem((itemData));
             Destroy(gameObject);
         }
     }
