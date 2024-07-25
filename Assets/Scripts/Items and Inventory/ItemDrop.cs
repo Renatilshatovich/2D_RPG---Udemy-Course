@@ -30,7 +30,7 @@ public class ItemDrop : MonoBehaviour
         
     }
 
-    public void DropItem(ItemData _itemData)
+    protected void DropItem(ItemData _itemData)
     {
         GameObject newDrop = Instantiate(dropPrefab, transform.position, Quaternion.identity);
 

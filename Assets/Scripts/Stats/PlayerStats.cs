@@ -11,22 +11,19 @@ public class PlayerStats : CharacterStats
     {
         base.Start();
 
-        player= GetComponent<Player>();
+        player = GetComponent<Player>();
     }
 
     public override void TakeDamage(int _damage)
     {
         base.TakeDamage(_damage);
-        
-        if (isKnocked)
-            player.DamageImpact();
     }
 
     protected override void Die()
     {
         base.Die();
-
         player.Die();
-        isKnocked = false;
+        
+        GetComponent<PlayerItemDrop>()?.GenerateDrop();
     }
 }
