@@ -38,11 +38,11 @@ public class ItemData_Equipment : ItemData
     public int iceDamage;
     public int lightingDamage;
 
-    public void ExecuteItemEffect()
+    public void Effect(Transform _enemyPosition)
     {
         foreach (var item in itemEffects)
         {
-            item.ExecuteEffect();
+            item.ExecuteEffect(_enemyPosition);
         }
     }
     
