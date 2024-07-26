@@ -7192,6 +7192,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5ba2e47c765fb78b18e95656da102c6d, type: 2}
   - {fileID: 11400000, guid: 35076ba3cf0ac55c28692986a6fb2058, type: 2}
   - {fileID: 11400000, guid: d7a4b6defc1152626bd2adc7713fe655, type: 2}
+  - {fileID: 11400000, guid: d7a4b6defc1152626bd2adc7713fe655, type: 2}
   dropPrefab: {fileID: 2643606474522996232, guid: dce485da58ff54822ab747c403f5f690, type: 3}
 --- !u!1001 &573661223
 PrefabInstance:
@@ -23405,6 +23406,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3a377b6fabffbda47add7713213abcab, type: 2}
   - {fileID: 11400000, guid: 24aaad935ec45f31fb1bda2e17160a37, type: 2}
   - {fileID: 11400000, guid: c3dcc0d21041e423e8e2ab3ca43dcf3c, type: 2}
+  - {fileID: 11400000, guid: 221b81f0048bd5d15a93f98c3f73dfd3, type: 2}
+  - {fileID: 11400000, guid: ee6d22a2179f4f509983c991dd22b156, type: 2}
   equipment: []
   inventory: []
   stash: []
