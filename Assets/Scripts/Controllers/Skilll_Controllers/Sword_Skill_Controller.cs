@@ -174,7 +174,7 @@ public class Sword_Skill_Controller : MonoBehaviour
             {
                 SwordSkillDamage(enemyTarget[targetIndex].GetComponent<Enemy>());
                 enemyTarget[targetIndex].GetComponent<Enemy>().DamageImpact();
-                enemyTarget[targetIndex].GetComponent<Enemy>().StartCoroutine("FreezeTimerFor", freezeTimeDuration); 
+                enemyTarget[targetIndex].GetComponent<Enemy>().StartCoroutine("FreezeTimerCoroutine", freezeTimeDuration); 
                 
                 targetIndex++;
                 bounceAmount--;
@@ -210,7 +210,7 @@ public class Sword_Skill_Controller : MonoBehaviour
     private void SwordSkillDamage(Enemy enemy)
     {
         player.stats.DoDamage(enemy.GetComponent<CharacterStats>());
-        enemy.StartCoroutine("FreezeTimerFor", freezeTimeDuration);
+        enemy.FreezeTimeFor(freezeTimeDuration);
         
         ItemData_Equipment equipedAmulet = Inventory.instance.GetEquipment(EquipmentType.Amulet);
                 
