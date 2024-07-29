@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 1
   itemName: Wooden sword
-  icon: {fileID: 1025091068, guid: a9ca9a41598dd2e44b125928045c518f, type: 3}
+  itemIcon: {fileID: 1025091068, guid: a9ca9a41598dd2e44b125928045c518f, type: 3}
   dropChance: 65
   equipmentType: 0
+  itemCooldown: 0
+  itemEffects: []
   strength: 0
   agility: 0
   intelligence: 0
@@ -24,10 +26,13 @@ MonoBehaviour:
   damage: 4
   critChance: 0
   critPower: 0
-  Health: 0
+  health: 0
   armor: 0
   evasion: 3
   magicResistance: 0
   fireDamage: 0
   iceDamage: 0
   lightingDamage: 0
+  craftingMaterials:
+  - data: {fileID: 11400000, guid: 9630104c0ebe34427932cee95181c16c, type: 2}
+    stackSize: 1

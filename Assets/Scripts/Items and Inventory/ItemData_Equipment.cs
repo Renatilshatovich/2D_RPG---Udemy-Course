@@ -42,6 +42,10 @@ public class ItemData_Equipment : ItemData
     public int lightingDamage;
 
     private int descriptionLength;
+    
+    [Header("Craft requirements")]
+    public List<InventoryItem> craftingMaterials;
+
 
     public void Effect(Transform _enemyPosition)
     {
