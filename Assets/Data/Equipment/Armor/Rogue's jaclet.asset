@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 1
   itemName: Rogue's jaclet
-  icon: {fileID: 957708663, guid: a9ca9a41598dd2e44b125928045c518f, type: 3}
+  itemIcon: {fileID: 957708663, guid: a9ca9a41598dd2e44b125928045c518f, type: 3}
   dropChance: 0
   equipmentType: 1
   itemCooldown: 0
   itemEffects:
   - {fileID: 11400000, guid: a7b7bf80315ec49ad9830799912c87de, type: 2}
+  itemEffectDescription: 'Unique : increase evasion on each taken hit'
   strength: 0
   agility: 0
   intelligence: 0
@@ -27,10 +28,11 @@ MonoBehaviour:
   damage: 0
   critChance: 0
   critPower: 0
-  Health: 50
+  health: 0
   armor: 0
   evasion: 5
   magicResistance: 0
   fireDamage: 0
   iceDamage: 0
   lightingDamage: 0
+  craftingMaterials: []
