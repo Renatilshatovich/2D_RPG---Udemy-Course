@@ -10683,7 +10683,7 @@ MonoBehaviour:
     baseValue: 0
     modifiers: 
   maxHealth:
-    baseValue: 20
+    baseValue: 300
     modifiers: 
   armor:
     baseValue: 0
@@ -10709,6 +10709,7 @@ MonoBehaviour:
   ailmentsDuration: 4
   shockStrikePrefab: {fileID: 3059320585258138054, guid: ed8f66e95a95ebdd79e9486498250ac5, type: 3}
   currentHealth: 0
+  isVulnerable: 0
   level: 1
   percantageModifier: 0.4
 --- !u!70 &566206698
@@ -14582,20 +14583,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 0
   swordType: 0
+  bounceUnlockButton: {fileID: 1641272639}
   bounceAmount: 4
   bounceGravity: 1
   bounceSpeed: 20
+  pierceUnlockButton: {fileID: 134926718}
   pierceAmount: 2
   peirceGravity: 1
+  spinUnlockButton: {fileID: 380738187}
   hitCooldown: 0.1
   maxTravelDistance: 7
   spinDuration: 2
   spinGravity: 1
+  swordUnlockButton: {fileID: 1914847420}
   swordPrefab: {fileID: 3783078191508917880, guid: 345a715bee3b37fe984266de084026c5, type: 3}
   launchForce: {x: 35, y: 25}
   swordGravity: 1
   freezeTimeDuration: 1.5
   returnSpeed: 15
+  timeStopUnlockButton: {fileID: 906112134}
+  vulnerableUnlockButton: {fileID: 1759353310}
   numberOfDots: 20
   spaceBeetwenDots: 0.07
   dotPrefab: {fileID: 7380192055524344823, guid: c4e4141d31315b14b8242264b04decf7, type: 3}
@@ -29927,7 +29934,7 @@ MonoBehaviour:
     baseValue: 0
     modifiers: 
   iceDamage:
-    baseValue: 5
+    baseValue: 0
     modifiers: 
   lightingDamage:
     baseValue: 0
@@ -29938,6 +29945,7 @@ MonoBehaviour:
   ailmentsDuration: 4
   shockStrikePrefab: {fileID: 3059320585258138054, guid: ed8f66e95a95ebdd79e9486498250ac5, type: 3}
   currentHealth: 0
+  isVulnerable: 0
 --- !u!114 &1232500343
 MonoBehaviour:
   m_ObjectHideFlags: 0
