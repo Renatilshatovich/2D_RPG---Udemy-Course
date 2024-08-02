@@ -70,7 +70,6 @@ public class UI_ItemSlot : MonoBehaviour, IPointerDownHandler, IPointerEnterHand
             return;
         
         Vector2 mousePosition = Input.mousePosition;
-        Debug.Log(mousePosition);
 
         float xOffset = 0;
         float yOffset = 0;
