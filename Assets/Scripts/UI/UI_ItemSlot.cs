@@ -79,7 +79,7 @@ public class UI_ItemSlot : MonoBehaviour, IPointerDownHandler, IPointerEnterHand
         else
             xOffset = 100;
 
-        if (mousePosition.y > 200)
+        if (mousePosition.y > 350)
             yOffset = -100;
         else
             yOffset = 100;
