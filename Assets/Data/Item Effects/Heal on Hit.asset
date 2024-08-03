@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4540889c1355bf019b93473a232995f8, type: 3}
   m_Name: Heal on Hit
   m_EditorClassIdentifier: 
+  effectDescription: Heal's you for 10% on hit
   healPercent: 0.1

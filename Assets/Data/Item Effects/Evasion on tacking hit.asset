@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2590c7dc92338a04bae357c103db80f, type: 3}
   m_Name: Evasion on tacking hit
   m_EditorClassIdentifier: 
+  effectDescription: Increase evasion on each hit taken
   buffType: 9
   buffAmount: 15
   buffDuration: 1.5
