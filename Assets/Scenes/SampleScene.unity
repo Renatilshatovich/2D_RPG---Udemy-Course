@@ -11135,6 +11135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fileName: data.rena
+  encryptData: 1
 --- !u!4 &501682408
 Transform:
   m_ObjectHideFlags: 0
