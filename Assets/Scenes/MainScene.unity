@@ -11978,6 +11978,9 @@ MonoBehaviour:
   shockStrikePrefab: {fileID: 3059320585258138054, guid: ed8f66e95a95ebdd79e9486498250ac5, type: 3}
   currentHealth: 0
   isVulnerable: 0
+  soulsDropAmount:
+    baseValue: 0
+    modifiers: 
   level: 1
   percantageModifier: 0.4
 --- !u!70 &566206698
@@ -14358,6 +14361,8 @@ MonoBehaviour:
   blackholeImage: {fileID: 1638077241}
   flaskImage: {fileID: 1947388609}
   currentSouls: {fileID: 1531622691}
+  soulsAmount: 0
+  increaseRate: 9999
 --- !u!114 &804321241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46318,6 +46323,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpoints: []
   closestCheckpointId: 
+  lostCurrencyPrefab: {fileID: 7734975253248106924, guid: f4341fd76d86eef788f501315b3b1d58, type: 3}
+  lostCurrencyAmount: 0
+  lostCurrencyX: 0
+  lostCurrencyY: 0
 --- !u!4 &2110649021
 Transform:
   m_ObjectHideFlags: 0
