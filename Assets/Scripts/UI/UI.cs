@@ -25,6 +25,7 @@ public class UI : MonoBehaviour
     private void Awake()
     {
         SwitchTo(skillTreeUI);
+        fadeScreen.gameObject.SetActive(true);
     }
 
     void Start()
@@ -89,7 +90,6 @@ public class UI : MonoBehaviour
 
     public void SwitchOnEndScreen()
     {
-        SwitchTo(null);
         fadeScreen.FadeOut();
         StartCoroutine(EndScreenCoroutine());
     }
