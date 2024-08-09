@@ -7,7 +7,7 @@ public class Checkpoint : MonoBehaviour
 {
     private Animator anim;
     public string id;
-    [FormerlySerializedAs("activated")] public bool activationStatus;
+    public bool activationStatus;
     
     private void Start()
     {
@@ -30,6 +30,9 @@ public class Checkpoint : MonoBehaviour
 
     public void ActivateCheckpoint()
     {
+        if (activationStatus == false) 
+            AudioManager.instance.PlaySFX(5, transform);
+        
         activationStatus = true;
         anim.SetBool("active", true);
     }

@@ -33,6 +33,7 @@ public class ItemObject : MonoBehaviour
             return;
         }
         
+        AudioManager.instance.PlaySFX(18, transform);
         Inventory.instance.AddItem((itemData));
         Destroy(gameObject);
     }
